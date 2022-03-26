@@ -1,0 +1,60 @@
+<p>
+proba works!
+</p>
+
+<p>Test</p>
+
+<div class="jeden">Tekst probny</div>
+
+<app-test></app-test>
+<ul>
+  <li>
+{{zmienna1}}
+</li>
+</ul>
+
+<span>
+{{imie}}</span>
+
+<ul>
+  <li>
+    {{user.name}}
+  </li>
+  <li>
+  {{user.surname}}
+</li>
+<li>
+{{user.age}}
+</li>
+</ul>
+<div>{{getUserData ('')}}</div>
+
+<h2> data binding - wiazanie wlaściwości </h2>
+
+<div class="" id=''></div>
+<img [src]='imageSrc' alt="">
+<input [placeholder]='placeholder'/>
+
+<div [ngClass]='jeden'>bla bla bla </div>
+
+<div [style.color]='jakisKolor'>Jakis kolor za pomoca data binding</div>
+<div [ngStyle]='myStyles'>Jakis kolor za pomoca style binding</div>
+
+<h2>event binding </h2>
+<div> Klik 1 </div>
+<button (click)='examp()'> Klik 2</button>
+
+<!-- {{wypiszDane}}
+<div [innerHTML]='wypiszDane'></div> -->
+
+<input #inputID (focus)="focusFunc()"
+placeholder="wpisz cos" />
+
+<button (click)='getDataFromInput(inputID.value)'>Pobierz dane z inputa</button>
+
+<h2> Two way data binding </h2>
+
+<input [(ngModel)]='jakasZmienna'
+placeholder="two way data binding" />
+
+{{jakasZmienna}}
