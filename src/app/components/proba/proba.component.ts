@@ -80,4 +80,17 @@ console.log(val)
   showOrNot:boolean = true;
   show:boolean = false;
 
+
+  showUserData(user, index?){
+    alert(`${user.name} ${user.surname} ${index+1}`);
+  }
+
+  newUser = {
+    id:1,
+    firstName: 'Karolina',
+    familyName: 'Bizub',
+    age: 31,
+    salary: 3000,
+    ready:0.32
+  }
 }

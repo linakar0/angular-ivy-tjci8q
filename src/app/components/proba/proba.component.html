@@ -1,6 +1,4 @@
-<p>
-proba works!
-</p>
+<p>proba works!</p>
 
 <p>Test</p>
 
@@ -9,65 +7,80 @@ proba works!
 <app-test></app-test>
 <ul>
   <li>
-{{zmienna1}}
-</li>
+    {{ zmienna1 }}
+  </li>
 </ul>
 
-<span>
-{{imie}}</span>
+<span> {{ imie }}</span>
 
 <ul>
   <li>
-    {{user.name}}
+    {{ user.name }}
   </li>
   <li>
-  {{user.surname}}
-</li>
-<li>
-{{user.age}}
-</li>
+    {{ user.surname }}
+  </li>
+  <li>
+    {{ user.age }}
+  </li>
 </ul>
-<div>{{getUserData ('')}}</div>
+<div>{{ getUserData('') }}</div>
 
-<h2> data binding - wiazanie wlaściwości </h2>
+<h2>data binding - wiazanie wlaściwości</h2>
 
-<div class="" id=''></div>
-<img [src]='imageSrc' alt="">
-<input [placeholder]='placeholder'/>
+<div class="" id=""></div>
+<img [src]="imageSrc" alt="" />
+<input [placeholder]="placeholder" />
 
-<div [ngClass]='jeden'>bla bla bla </div>
+<div [ngClass]="jeden">bla bla bla</div>
 
-<div [style.color]='jakisKolor'>Jakis kolor za pomoca data binding</div>
-<div [ngStyle]='myStyles'>Jakis kolor za pomoca style binding</div>
+<div [style.color]="jakisKolor">Jakis kolor za pomoca data binding</div>
+<div [ngStyle]="myStyles">Jakis kolor za pomoca style binding</div>
 
-<h2>event binding </h2>
-<div> Klik 1 </div>
-<button (click)='examp()'> Klik 2</button>
+<h2>event binding</h2>
+<div>Klik 1</div>
+<button (click)="examp()">Klik 2</button>
 
 <!-- {{wypiszDane}}
 <div [innerHTML]='wypiszDane'></div> -->
 
-<input #inputID (focus)="focusFunc()"
-placeholder="wpisz cos" />
+<input #inputID (focus)="focusFunc()" placeholder="wpisz cos" />
 
-<button (click)='getDataFromInput(inputID.value)'>Pobierz dane z inputa</button>
+<button (click)="getDataFromInput(inputID.value)">Pobierz dane z inputa</button>
 
-<h2> Two way data binding </h2>
+<h2>Two way data binding</h2>
 
-<input [(ngModel)]='jakasZmienna'
-placeholder="two way data binding" />
+<input [(ngModel)]="jakasZmienna" placeholder="two way data binding" />
 
-{{jakasZmienna}}
+{{ jakasZmienna }}
 
-<input [(ngModel)]='email'
-placeholder="email" (keyup)="onKeyUp()"/>
+<input [(ngModel)]="email" placeholder="email" (keyup)="onKeyUp()" />
 
-{{email}}
+{{ email }}
 
-<h2> Dyrektywy strukturalne *ngIf </h2>
+<h2>Dyrektywy strukturalne *ngIf</h2>
 
-<div *ngIf="showOrNot"> Wiatmy </div>
+<div *ngIf="showOrNot">Wiatmy</div>
 
-<div *ngIf="show; else showNot"> Wiatmy </div>
+<div *ngIf="show; else showNot">Wiatmy</div>
 
 <ng-template #showNot>Jesli inne dane</ng-template>
+
+<div *ngFor="let user of user2">{{ user.name }}</div>
+
+<ul>
+  <li *ngFor="let user of user2; let i = index">
+    <span (click)="showUserData(user)">
+      {{ i + 1 }}
+      {{ user.name }} {{ user.surname }}</span
+    >
+  </li>
+</ul>
+
+<h2>PIPE</h2>
+
+<ul>
+  <li>{{ newUser.ready | percent }}</li>
+  <li>{{ newUser.salary | currency }}</li>
+  <li>{{ newUser.familyName | uppercase }}</li>
+</ul>
