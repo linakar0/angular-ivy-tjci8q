@@ -65,4 +65,19 @@ console.log(val)
   }
 
   jakasZmienna:string = '';
+  email: string = " ";
+  komunikat:string ='';
+
+  onKeyUp() {
+    if (this.email.length < 8){
+      console.log('zle haslo');
+      this.komunikat = 'zle haslo'
+    } else {
+      this.komunikat = "dobre haslo"
+    }
+  }
+
+  showOrNot:boolean = true;
+  show:boolean = false;
+
 }

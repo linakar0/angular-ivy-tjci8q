@@ -58,3 +58,16 @@ placeholder="wpisz cos" />
 placeholder="two way data binding" />
 
 {{jakasZmienna}}
+
+<input [(ngModel)]='email'
+placeholder="email" (keyup)="onKeyUp()"/>
+
+{{email}}
+
+<h2> Dyrektywy strukturalne *ngIf </h2>
+
+<div *ngIf="showOrNot"> Wiatmy </div>
+
+<div *ngIf="show; else showNot"> Wiatmy </div>
+
+<ng-template #showNot>Jesli inne dane</ng-template>
