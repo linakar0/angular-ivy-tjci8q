@@ -93,4 +93,6 @@ console.log(val)
     salary: 3000,
     ready:0.32
   }
+
+  liczba:number = 8;
 }
